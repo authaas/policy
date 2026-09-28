@@ -1,0 +1,17 @@
+syntax = "proto3";
+
+package policy.decision;
+
+import "policy/statement.proto";
+import "policy/statement/action.proto";
+
+// Denial is a request policy did not allow.
+message Denial {
+  // The resource the request targeted.
+  string resource = 1;
+  // What the request tried to do to the resource.
+  policy.statement.Action action = 2;
+  // Each allow statement that could have permitted the request, holding only
+  // its conditions that did not hold.
+  repeated policy.Statement failed = 3;
+}

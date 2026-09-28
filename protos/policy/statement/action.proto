@@ -1,0 +1,12 @@
+syntax = "proto3";
+
+package policy.statement;
+
+// Action is what is done to a resource.
+enum Action {
+  ACTION_UNSPECIFIED = 0;
+  ACTION_CREATE = 1;
+  ACTION_READ = 2;
+  ACTION_UPDATE = 3;
+  ACTION_DELETE = 4;
+}

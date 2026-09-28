@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+package policy;
+
+import "policy/statement/condition.proto";
+
+// Statement is one rule of policy.
+message Statement {
+  // Conditions that must all hold.
+  repeated policy.statement.Condition conditions = 1;
+}

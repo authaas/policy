@@ -1,0 +1,16 @@
+syntax = "proto3";
+
+package policy.statement;
+
+import "google/protobuf/struct.proto";
+import "policy/statement/condition/operator.proto";
+
+// Condition is a comparison a statement requires to hold.
+message Condition {
+  // Where the compared value is found.
+  repeated string left = 1;
+  // How the two sides are compared.
+  policy.statement.condition.Operator operator = 2;
+  // The value compared against.
+  google.protobuf.Value right = 3;
+}

@@ -1,0 +1,16 @@
+syntax = "proto3";
+
+package policy.statement.condition;
+
+// Operator is how a condition compares its two sides.
+enum Operator {
+  OPERATOR_UNSPECIFIED = 0;
+  // The value equals one of the compared values.
+  OPERATOR_IN = 1;
+  // The value holds at least one of the compared values.
+  OPERATOR_CONTAINS_ANY = 2;
+  // The value is no greater than the compared value.
+  OPERATOR_AT_MOST = 3;
+  // The value is no less than the compared value.
+  OPERATOR_AT_LEAST = 4;
+}
